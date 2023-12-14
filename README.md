@@ -31,7 +31,17 @@ https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js
 Maybe use p5.play for character's movement
 https://p5play.org/learn/
 
-*Plan for user testing*
+*Plan for user testing*  
+
+1. Ensure parental consent and a supportive environment for the children.  
+
+2. Select a small group of children within the 2-5 age range.  
+
+3. Set up a comfortable area with the game.  
+
+4. Let children play the game, observing their interaction and noting any difficulties.  
+
+5. Review observations and feedback to identify areas for improvement.  
 
 *Short discussion of why your project is relevant:*  
 

@@ -24,11 +24,14 @@ Inspired by the educational comics “The Bus of Many Colors” created by a Jap
 *Circuit diagram*
 ![screen display](./cd.jpg)  
 
-*Description of any external data or library that you are planning to use* 
+*Description of any external data or library that you are planning to use*  
+
 Use ps.speech for voiceover prompts  
+
 https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js
 
-Maybe use p5.play for character's movement
+Maybe use p5.play for character's movement  
+
 https://p5play.org/learn/
 
 *Plan for user testing*  

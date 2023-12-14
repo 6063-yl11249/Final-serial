@@ -1,5 +1,5 @@
 # Rainbow Rides: The Interactive Color Recognition Game for Kids
-Inspired by the educational comics “The Bus of Many Colors” created by a Japanese artist Tupera Tupera, which teaches kids the concept of color recognition of different figures, such as trees, tomatoes, eggs. Based on this book, I’d like to create a game for children to interactively explore and reaffirm their knowledge of colors, and reinforce their learning through interactive play.  
+Inspired by the educational comics “The Bus of Many Colors” created by a Japanese artist Tupera Tupera, which teaches kids the concept of color recognition of different figures, such as trees, tomatoes, eggs. Based on this book, I’d like to create a game for children to interactively explore and review their knowledge of colors, and reinforce their learning through interactive play.  
 
 ![screen display](./display.jpg)
 

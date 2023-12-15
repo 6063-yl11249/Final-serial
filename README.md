@@ -64,7 +64,7 @@ According to Crawford's definition, this project can be seen as highly interacti
 
 *Why is it important to me?*  
 
-As a design with a focus on tangible electronics for teaching and learning, this project can achieve my principles of user-centered design: 
+As a designer with a focus on tangible electronics for teaching and learning, this project can achieve my principles of user-centered design: 
 
 1. Intuitive Interaction: The use of tangible buttons on the Arduino board for color selection is intuitive for young children. This design choice is based on the understanding that young users can more easily interact with physical objects than abstract concepts.  
 

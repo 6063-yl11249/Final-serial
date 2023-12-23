@@ -73,3 +73,9 @@ As a designer with a focus on tangible electronics for teaching and learning, th
 3. Hands-On Learning: The use of an Arduino board with physical buttons embodies the essence of tangible electronics. It offers a hands-on experience that is often more engaging and memorable for children compared to the traditional storybook.  
 
 4. Bridging Digital and Physical Worlds: This project seamlessly integrates the physical interaction with digital feedback, providing a holistic learning experience that resonates with the way children interact with the world.
+
+*Short discussion of feedback from user testing*  
+
+1. Cuurently, the correct of incorrect feedback is not intuitive for kids. To enhance the feedback mechanism, consider making the character's reactions more expressive and dynamic.  For instance, when a child selects the correct answer, the character could joyfully board the bus, accompanied by bright, engaging animations.  This vivid, positive reinforcement will make the learning process more intuitive and rewarding for kids.  
+
+2. The tangible button is small, so it's hard for kids to recognize each button and press it. Increasing the size of the buttons can make them more noticeable and easier for small hands to press.  Additionally, integrating varied textures or shapes can help differentiate each button, making it more straightforward for children to recognize and interact with them.  This approach will not only improve usability but also add a tactile dimension to the learning experience.

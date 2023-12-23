@@ -5,7 +5,17 @@ let connectButton;
 
 let readyToReceive;
 
+let pred2 = 0;
+let pred3 = 0;
+let pred4 = 0;
+let pred5 = 0;
+
 // project variables
+let Bgreen = false;
+let Bred = false;
+let Byellow = false;
+let Bbrown = false;
+
 let displayColorImage = false;
 let currentPrompt = "";
 
@@ -35,31 +45,37 @@ function receiveSerial() {
 
   // get data from Serial string
   let data = JSON.parse(line).data;
-  let d2 = data.D2;
-  let d3 = data.D3;
-  let d4 = data.D4;
-  let d5 = data.D5;
+  print (data);
+
+  let d2 = data.D2.value;
+  let d3 = data.D3.value;
+  let d4 = data.D4.value;
+  let d5 = data.D5.value;
 
   // use data to update project variables
-    if (d5.isPressed) {
-      console.log("D5 is pressed");
-      checkSelection('green');
-  } 
+  if(d5 == 1 && pred5 == 0) {
+    Bgreen = true;
+  } else {
+    Bgreen = false;
+  }
   
-  if (d4.isPressed) {
-    console.log("D4 is pressed");
-      checkSelection('red');
-  } 
+  if(d4 == 1 && pred4 == 0) {
+    Bred = true;
+  } else {
+    Bred = false;
+  }
   
-  if (d3.isPressed) {
-    console.log("D3 is pressed");
-      checkSelection('yellow');
-  } 
+  if(d3 == 1 && pred3 == 0) {
+    Byellow = true;
+  } else {
+    Byellow = false;
+  }
   
-  if (d2.isPressed) {
-    console.log("D2 is pressed");
-      checkSelection('brown');
-  } 
+  if(d2 == 1 && pred2 == 0) {
+    Bbrown = true;
+  } else {
+    Bbrown = false;
+  }
 
   // serial update
   readyToReceive = true;
@@ -95,7 +111,7 @@ let mSpeech;
 
 function setup() {
   // setup project
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth,windowHeight); 
 
   // Initialize the speech object
   mSpeech = new p5.Speech();
@@ -124,6 +140,7 @@ function setup() {
     { color: "yellow" },
     { color: "brown" },
   ];
+
 
   // setup serial
   readyToReceive = false;
@@ -154,6 +171,7 @@ function draw() {
     text("Select number of rounds to start", width / 2, 30);
     // No return statement here to allow buttons to be interactive
   } else if (!gameEnded) {
+   
     // Main game drawing logic
     background(255); 
 
@@ -173,6 +191,24 @@ function draw() {
 
     // Draw the buses
     drawBuses();
+
+    if (Bgreen) {
+      console.log("Green button processing");
+      checkSelection('green');
+      Bgreen = false;
+    } else if (Bred) {
+      console.log("Red button processing");
+      checkSelection('red');
+      Bred = false;
+    } else if (Byellow) {
+      console.log("Yellow button processing");
+      checkSelection('yellow');
+      Byellow = false;
+    } else if (Bbrown) {
+      console.log("Brown button processing");
+      checkSelection('brown');
+      Bbrown = false;
+    }
   }
 
   // update serial: request new data
@@ -188,17 +224,22 @@ function draw() {
   }
 }
 
-
 function startGame() {
   console.log("Starting game, Round: " + currentRound + " of " + maxRounds);
   if (gameStarted) {
-    isFirstAttempt = true;
     displayColorImage = false;
     selectedFigure = selectRandomFigure(figures);
-    selectedFigure.speakPrompt(figures);
     currentPrompt = "What is the color of " + selectedFigure.voicePrompt + "?";
+
+    // Call speakPrompt only if it's the first attempt of the round
+    if (isFirstAttempt) {
+      selectedFigure.speakPrompt(figures);
+      isFirstAttempt = false;
+    }
   }
+  
 }
+
 
 function selectRandomFigure(figures) {
   let randomIndex = int(random(figures.length));
@@ -224,7 +265,7 @@ function drawBuses() {
 }
 
 function keyPressed() {
-   if (key === 'A' || key === 'a') {
+  if (key === 'A' || key === 'a') {
     resetGameVariables();
   }
 }
@@ -286,7 +327,6 @@ function handleIncorrectSelection() {
 
 // End the game
 function endGame() {
-  console.log("endGame() called");
   gameEnded = true;
   displaySummary();
   displayRestartOption();
@@ -295,8 +335,6 @@ function endGame() {
 
 // Function to display a summary of the game
 function displaySummary() {
-
-  console.log("displaySummary() called");
     background(255); 
     textSize(32);
     fill(0); 
